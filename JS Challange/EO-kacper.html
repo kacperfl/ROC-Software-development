@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let punten = 0;
+
+         let userInput = prompt("Hoeveel keer wil je spelen?");
+         for(i=0; i<userInput; i++ ){
+            const steden = ["Rome", "Luxembourg", "Brussels", "Copenhagen", "Helsinki", "Paris", "Bratislava","Ljubljana", "Berlin", "Athens", "Dublin", "Amsterdam", "Lisbon", "Madrid", "Stockholm", "London", "Nicosia", "Vilnius", "Prague", "Tallin", "Budapest", "Vienna", "Warsaw"];
+            const landen = ["Italy", "Luxembourg", "Belgium", "Denmark", "Finland", "France", "Slovakia", "Slovenia", "Germany", "Greece", "Ireland", "Netherlands","Portugal", "Spain", "Sweden", "United Kingdom", "Cyprus","Lithuania", "Czech Republic", "Estonia", "Hungary", "Austria", "Poland"];
+            
+            let randomLand = Math.floor(Math.random() * landen.length);
+            let land = landen[randomLand];
+            let stad = steden[randomLand];
+            
+
+            
+       
+
+            let userInput1 = prompt("Wat is de hoofdstad van: " + land + "\n" + steden.join("\n"));
+
+            
+
+            
+
+            if (stad.toLowerCase() == userInput1.toLowerCase()){
+                alert("Je antwoord is correct!") 
+                punten ++;
+        
+                
+            }else{
+                alert("Jou antwoord is incorrect!") 
+            
+            }
+
+          
+         }
+        
+
+        alert("Aantal punten: " + punten + "// Aantal keer gespeeld " + userInput);
+
+//     sessionStorage.setItem("Totaal", punten );
+//     sessionStorage.setItem("Totaal", userInput);
+//    let userNaam = sessionStorage.getItem("Totaal");
+
+            
+
+
+
+         
+         
+
+
+
+
+        
+     </script>
+</body>
+</html>
