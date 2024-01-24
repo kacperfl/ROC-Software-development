@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weersvoorspelling</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Weersvoorspelling voor {{ city }}, {{ country }}</h1>
+        <br />
+        
+        <div class="d-flex ">
+            {% for day in forecast_days %}
+                <div class="mx-2 text-center">
+                    <p>{{ day['day_of_week'] }}</p>
+                    <img src="{{ day['day']['condition']['icon'] }}" alt="Weather Icon">
+                </div>
+            {% endfor %}
+        </div>
+        
+        <br />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Min Temperatuur</th>
+                    <th>Max Temperatuur</th>
+                    <th>Weersomstandigheden</th>
+                    <th>Zonsopgang</th>
+                    <th>Zonsondergang</th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for day in forecast_days %}
+                    <tr>
+                        <td>{{ day['date'] }}</td>
+                        <td>{{ day['day']['mintemp_c'] }}°C</td>
+                        <td>{{ day['day']['maxtemp_c'] }}°C</td>
+                        <td>{{ day['day']['condition']['text'] }}</td>
+                        <td>{{ day['astro']['sunrise'] }}</td>
+                        <td>{{ day['astro']['sunset'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
