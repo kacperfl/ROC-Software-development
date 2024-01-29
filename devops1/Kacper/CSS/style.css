@@ -1,0 +1,16 @@
+#git-status-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #git-status-list li {
+    padding: 5px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #git-status-list li:last-child {
+    border-bottom: none;
+    
+  }
